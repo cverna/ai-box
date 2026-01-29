@@ -1,0 +1,11 @@
+[Unit]
+Description=Mount virtiofs workspace
+After=local-fs.target
+
+[Mount]
+What=mount0
+Where=/var/workspace
+Type=virtiofs
+
+[Install]
+WantedBy=multi-user.target

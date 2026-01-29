@@ -1,0 +1,11 @@
+[Unit]
+Description=Mount virtiofs host config
+After=local-fs.target
+
+[Mount]
+What=mount1
+Where=/var/home/cverna/.config
+Type=virtiofs
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+[Unit]
+Description=OpenCode Server
+After=network.target var-workspace.mount
+Requires=var-workspace.mount
+
+[Service]
+Type=simple
+User=cverna
+Group=cverna
+EnvironmentFile=/etc/opencode/opencode.env
+WorkingDirectory=/home/cverna
+ExecStart=/usr/local/bin/opencode serve --hostname 0.0.0.0 --port 8081
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
